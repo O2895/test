@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ask God</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>✨ ASK GOD ✨</h1>
+            <p>Seek divine wisdom from the Almighty</p>
+        </header>
+
+        <div class="main-content">
+            <div class="chat-container">
+                <div id="chatHistory" class="chat-history">
+                    <div class="welcome-message" id="welcomeMessage">
+                        <h2>Greetings, Mortal</h2>
+                        <p>Speak your questions into the heavens, and receive wisdom from the Almighty.</p>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <textarea 
+                        id="questionInput" 
+                        placeholder="Speak your question into the heavens..."
+                        rows="3"
+                    ></textarea>
+                    <div class="button-row">
+                        <button id="askButton" class="ask-button">
+                            <span class="button-text">Ask God</span>
+                            <span class="loading-spinner" style="display: none;">⏳</span>
+                        </button>
+                        <button id="saveChatButton" class="save-button" title="Save current conversation">
+                            Save
+                        </button>
+                        <button id="rebirthButton" class="rebirth-button" title="Clear conversation and start anew">
+                            Rebirth
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="saved-chats-section">
+                <div class="archives-header">
+                    <h3>📜 Sacred Archives</h3>
+                </div>
+                <div class="saved-chats-content">
+                    <div id="savedChatsList" class="saved-chats-list">
+                        <p class="no-chats-message">No sacred conversations preserved yet.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="divine-settings">
+            <details>
+                <summary>⚡ Divine Configuration ⚡</summary>
+                <div class="settings-content">
+                    <label for="apiMode">Divine Power Source:</label>
+                    <select id="apiMode">
+                        <option value="guest">☁️ Guest Mode (Instant - No Setup)</option>
+                        <option value="cloud">☁️ Cloud (Your Cohere API Key)</option>
+                        <option value="local">💻 Local (Ollama Required)</option>
+                    </select>
+                    
+                    <div id="guestModeInfo" style="display: block;">
+                        <small>✨ Using shared Cohere cloud service. Works instantly!</small>
+                    </div>
+                    
+                    <div id="cloudSettings" style="display: none;">
+                        <label for="groqApiKey">Cohere API Key:</label>
+                        <input 
+                            type="password" 
+                            id="groqApiKey" 
+                            placeholder="Enter your Cohere API key"
+                        >
+                        <small>Get your free key at <a href="https://dashboard.cohere.com" target="_blank">dashboard.cohere.com</a></small>
+                        
+                        <label for="cloudModel">Cloud Model:</label>
+                        <select id="cloudModel">
+                            <option value="command-r-plus-08-2024">Command R+ 08-2024 (Best)</option>
+                            <option value="command-r-08-2024">Command R 08-2024</option>
+                            <option value="command-r7b-12-2024">Command R7B 12-2024 (Fast)</option>
+                            <option value="command-r-03-2024">Command R 03-2024</option>
+                        </select>
+                    </div>
+                    
+                    <div id="localSettings" style="display: none;">
+                        <label for="ollamaUrl">Sacred Server Portal:</label>
+                        <input 
+                            type="text" 
+                            id="ollamaUrl" 
+                            value="http://localhost:11434"
+                            placeholder="http://localhost:11434"
+                        >
+                        
+                        <label for="modelSelect">Chosen Divine Vessel:</label>
+                        <select id="modelSelect">
+                            <option value="">Loading divine vessels...</option>
+                        </select>
+                        
+                        <button id="refreshModels" class="refresh-button">Refresh Divine Vessels</button>
+                        
+                        <small>Ensure the divine service is running upon your machine.</small>
+                        <a href="https://ollama.ai" target="_blank">Obtain the divine service</a>
+                    </div>
+                </div>
+            </details>
+        </div>
+
+        <div class="disclaimer">
+            *This is just a joke. Not the real God. For entertainment purposes only.
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
